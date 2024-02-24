@@ -1,0 +1,29 @@
+<form
+  action="<%= url %>"
+  class="container d-flex justify-content-center sticky-bottom"
+>
+  <nav aria-label="Page navigation" class="">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <% for( let page = 1; page <= maxPage; page++ ) { %> <% let isActive =
+      (currentPage == page) ? 'active' : '';%>
+
+      <li class="page-item <%= isActive %>" aria-current="page">
+        <a class="page-link" href="<%=page%>"><%= page %></a>
+      </li>
+      <% } %>
+
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</form>
+
+<script></script>

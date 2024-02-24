@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-evenly align-content-center">
+  <% try { %> <% if (keyword) { %>
+  <span>Keyword: <%= keyword %></span>
+  <span><%= jumlahData %> Data ditemukan</span>
+  <% } } catch (error) { } %>
+</div>
+<div class="container" style="background-color: ghostwhite">
+  <div
+    class="row justify-content-center pt-2 gap-lg-4"
+    id="Container-card-dapil"
+  >
+    <% dataApi.forEach(element => { %>
+    <div class="card col-1 mb-2" style="width: 20rem">
+      <div class="card-body d-flex flex-column">
+        <h3 class="card-title"><%= element.namaDapil %></h3>
+        <p class="card-text">List DPD Dapil <%= element.namaDapil %></p>
+        <div class="d-grid gap-2 mt-auto">
+          <a
+            name=""
+            id="btn-<%= element.id %>"
+            class="btn btn-danger"
+            href="/dpd/dapil/<%= element.id %>"
+            role="button"
+            >List</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<script>
+  let filter_box = document.getElementById("filter-box");
+  let btn_filter_text = document.getElementById("btn-filter-text");
+
+  function filterButton_OnClick() {
+    if (btn_filter_text.classList.contains("visible")) {
+      btn_filter_text.classList.replace("visible", "hidden");
+      btn_filter_text.innerText = "Tampilkan Filter";
+      filter_box.classList.add("visually-hidden");
+    } else if (btn_filter_text.classList.contains("hidden")) {
+      btn_filter_text.classList.replace("hidden", "visible");
+      btn_filter_text.innerText = "Sembunyikan Filter";
+      filter_box.classList.remove("visually-hidden");
+    }
+  }
+</script>

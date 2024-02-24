@@ -1,0 +1,82 @@
+<nav
+  class="navbar bg-dark border-bottom border-danger border-3 rounded-bottom-1"
+  style="background-color: #791515 !important"
+>
+  <div class="container">
+    <a href="/" class="navbar-brand"
+      ><img
+        src="https://pemilu2024.kpu.go.id/assets/logo.7cbefe7d.png"
+        alt="logo"
+        width="30"
+        height="30"
+        class="me-2"
+      /><strong class="d-inline-block d-lg-none text-white"
+        >List Caleg Indonesia (Mobile)</strong
+      ><strong class="d-none d-lg-inline-block text-white"
+        >List Caleg Indonesia 2024</strong
+      ></a
+    ><button
+      class="btn border border-secondary d-flex align-items-center text-white"
+      id="button-filter"
+      onclick="filterButton_OnClick()"
+    >
+      <i
+        class="vue-feather vue-feather--filter me-2"
+        data-name="filter"
+        data-tags="funnel,hopper"
+        data-type="filter"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-filter vue-feather__content"
+        >
+          <polygon
+            points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+          ></polygon>
+        </svg>
+      </i>
+      <span id="btn-filter-text" class="visible">Sembunyikan Filter</span>
+    </button>
+  </div>
+</nav>
+<form
+  action=""
+  method="get"
+  id="filter-box"
+  class="container mt-1 rounded-2 p-1 border"
+  style="background-color: #f3f3f3"
+>
+  <div class="d-block d-sm-none">
+    <label for="searchFilter">Pilih Provinsi: </label>
+    <br />
+  </div>
+  <div class="input-group">
+    <label
+      class="d-none d-sm-block input-group-text"
+      id="inputGroup-sizing-default"
+      >Pilih Provinsi</label
+    >
+    <input
+      type="search"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      name="searchFilter"
+      id="searchFilter"
+      placeholder="Masukan Nama Provinsi"
+      oninput=""
+      value="<% try {if (keyword) {%><%=keyword%><%}} catch (error) {} %>"
+    />
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+      Search
+    </button>
+  </div>
+</form>
